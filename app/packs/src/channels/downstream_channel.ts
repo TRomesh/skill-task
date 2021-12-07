@@ -4,11 +4,13 @@ import store from 'store';
 
 import consumer from './consumer';
 
-consumer.subscriptions.create(
-  { channel: 'DownstreamChannel' },
-  {
-    received(data: DataPoint) {
-      store.dispatch(apiFetchSucceeded('dataPoints', [data]));
-    },
-  }
-);
+// Moved this subscription to the Home component's useEffect life ccle hook
+
+// consumer.subscriptions.create(
+//   { channel: 'DownstreamChannel' },
+//   {
+//     received(data: DataPoint) {
+//       store.dispatch(apiFetchSucceeded('dataPoints', [data]));
+//     },
+//   }
+// );
